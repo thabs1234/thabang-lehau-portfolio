@@ -129,6 +129,34 @@
       z-index: 0;
     }
 
+    .hero-avatar {
+      position: absolute;
+      top: -24px;
+      right: clamp(8px, 4vw, 48px);
+      width: clamp(72px, 14vw, 130px);
+      height: clamp(72px, 14vw, 130px);
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 4px var(--bg), 0 12px 32px rgba(0, 0, 0, 0.5);
+      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      pointer-events: none;
+    }
+    .hero-avatar:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 0 4px var(--bg), 0 16px 40px var(--accent-glow);
+    }
+    @media (max-width: 640px) {
+      .hero-avatar {
+        top: -12px;
+        right: 8px;
+        width: 72px;
+        height: 72px;
+        border-width: 2px;
+      }
+    }
+
     .hero-content { position: relative; z-index: 1; }
 
     .hero-label {
@@ -1368,6 +1396,7 @@
 
   <!-- HERO -->
   <header class="hero">
+    <img class="hero-avatar" src="avatar.jpg" alt="Thabang Lehau — AI Systems & Automation Engineer" />
     <div class="container hero-content">
       <div class="hero-label">// AI Systems & Automation Engineer</div>
       <h1>Thabang Lehau<br /><span class="gradient">builds systems that actually run.</span></h1>
